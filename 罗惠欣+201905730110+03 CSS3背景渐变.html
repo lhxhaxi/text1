@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3背景渐变</title>
+	<style>
+		body,ul,li,dl,dt,dd,h1,h2,h3,h4,h5{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #F7F7F7;
+		}
+		.wrapper{
+			width: 1000px;
+			margin: 0 auto;
+			padding: 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		header{
+			padding: 20px 0;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		header h3{
+			line-height: 1;
+			font-weight: normal;
+			font-size: 28px;
+
+		}
+		.main:after{
+			content: "";
+			clear: both;
+			display: block;
+		}
+		.main .item{
+			width: 200px;
+			height: 200px;
+			margin: 0 30px 30px 0;
+			position:relative;
+			display: flex;
+			background-color: #fff;
+			float:left;
+			box-shadow: 2px 2px 5px #ccc;
+		}
+			.main .item:after{
+			content: attr(data-brief);
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align:center;
+			line-height:210px;
+			color:#fff;
+			font-size: 50px;
+			background-color: rgba(177,177,177,0);
+			transition: all 0.3s ease-in;
+			z-index: -1;
+		}
+		.main .item:hover:after{
+			background-color: rgba(177,177,177,0.6);
+			z-index: 100;
+		}
+		.main .item:nth-child(1){
+			background-image: linear-gradient(#f63,#58a);
+		}
+		.main .item:nth-child(2){
+			background-image: linear-gradient(#f63 20%,#58a 80%);
+		}
+		.main .item:nth-child(3){
+			background-image: linear-gradient(#f63 50%,#58a 50%);
+		}
+		.main .item:nth-child(4){
+			background-image: linear-gradient(#f63 50%,#58a 50%);
+			background-size: 100% 50px;
+		}
+		.main .item:nth-child(5){
+			background-image: linear-gradient(#f63 30%,#58a 30%,#58a 70%);
+			background-size: 100% 50px;
+		}
+		.main .item:nth-child(6){
+			background-image: linear-gradient(#f63 30%,#58a 30%,#58a 60%,#58a 70%,#77a54c 60%,#77a54c 100%);
+			background-size: 100% 50px;
+		}
+		.main .item:nth-child(7){
+			background-image: linear-gradient(#f63 25%,#58a 0%,#58a 50%,#77a54c 0%,#77a54c 75%,#690974 0%);
+			background-size: 100% 50px;
+		}
+		.main .item:nth-child(8){
+			background-image: linear-gradient(90deg,#f63 25%,#58a 0%,#58a 50%,#77a54c 0%,#77a54c 75%,#690974 0%);
+			background-size: 50px 100%;
+		}
+		.main .item:nth-child(9){
+			background-image: linear-gradient(45deg,#f63 25%,#58a 0%,#58a 50%,#77a54c 0%,#77a54c 75%,#690974 0%);
+			background-size: 50px 50px;
+		}
+		.main .item:nth-child(10){
+			background-image: linear-gradient(45deg,#f63 25%,#58a 0%,#58a 50%,#f63 0%,#f63 75%,#58a 0%);
+			background-size: 50px 50px;
+		}
+		.main .item:nth-child(11){
+			background-image: linear-gradient(45deg,#f63 25%,#58a 0%,#58a 50%,#f63 0%,#f63 75%,#58a 0%);
+			background-size: 20px 20px;
+		}
+		.main .item:nth-child(12){
+			background-image: repeating-linear-gradient(45deg,#f63 0,#f63 15px,#58a 0,#58a 40px);
+			
+		}
+		.main .item:nth-child(13){
+			background-image: repeating-linear-gradient(60deg,#f63 0,#f63 15px,#58a 0,#58a 30px);
+		}
+		.main .item:nth-child(14){
+			background-image: repeating-linear-gradient(30deg,#79b 0,#79b 15px,#58a 0,#58a 30px);
+	    }
+	    .main .item:nth-child(15){
+			background-image: repeating-linear-gradient(13deg,#f63 0,#f63 15px,#fd7344 0,#fd7344 30px);
+	    }
+	    .main .item:nth-child(16){
+	    	background:#f63;
+			background-image: linear-gradient(0deg,white 1px,transparent 0),linear-gradient(90deg,white 1px,transparent 0);
+			background-size: 30px 30px;
+		}
+		.main .item:nth-child(17){
+	    	background:#f63;
+			background-image: linear-gradient(0deg,white 2px,transparent 0),linear-gradient(90deg,white 2px,transparent 0);
+			background-size: 30px 30px;
+		}
+		.main .item:nth-child(18){
+	    	background:#f63;
+			background-image: 
+			linear-gradient(0deg,hsla(0,0%,100%,.3) 1px,transparent 0),
+			linear-gradient(90deg,hsla(0,0%,100%,.3) 1px,transparent 0),
+			linear-gradient(0deg,white 2px,transparent 0),
+            linear-gradient(90deg,white 2px,transparent 0);
+			background-size: 15px 15px,15px 15px,75px 75px,75px 75px;
+		}
+		.main .item:nth-child(19){
+	    	background:#eee;
+			background-image:linear-gradient(45deg,#bbb 50%,transparent 0);
+			background-size:30px 30px;
+		}
+        .main .item:nth-child(20){
+            background:
+            linear-gradient(90deg, #ff6633 25%, transparent 0),
+            linear-gradient(90deg,#aabb44 46%, transparent 0),
+            linear-gradient(90deg,#f0e2db 57%, transparent 0),
+            linear-gradient(90deg,#665555 110%, transparent 0);
+            background-size: 58px 100%, 59px 100%, 82px 100%;
+        }
+        .main .item:nth-child(21){
+        	background:
+            linear-gradient(90deg, #ff6633 11px, transparent 0),
+            linear-gradient(90deg,#aabb44 23px, transparent 0),
+            linear-gradient(90deg,#665555 41px, transparent 0);
+            background-size: 41px 100%, 61px 100%, 83px 100%;
+        }
+        .main .item:nth-child(22){
+        	background: radial-gradient(black,white);
+        }
+        .main .item:nth-child(23){
+         	background: black;
+        	background: radial-gradient(white,#8dd0ec 43%,red 68%,black 100%);
+        }
+        .main .item:nth-child(24){
+         	background: black;
+        	background: radial-gradient(at right bottom,white,#8dd0ec 15%,red 35%,black 60%,black 100%);
+        }
+        .main .item:nth-child(25){
+         	background: black;
+        	background: radial-gradient(70% 50px,white,#8dd0ec 43%,red 68%,black 100%);
+        }
+        .main .item:nth-child(26){
+        	background: radial-gradient(at 50px 100px,white,black);
+        }
+        .main .item:nth-child(27){
+            background: radial-gradient(300px 150px ellipse at 50% 10%,white,black 30%);
+        }  
+        .main .item:nth-child(28){
+         	background: black;
+        	background: radial-gradient(35px 120px ellipse at 90% 50%,white,#8dd0ec 43%,red 68%,black 100%);
+        }
+        .main .item:nth-child(29){
+            background-size: 20px 20px;
+            background-image: radial-gradient(#d2b48c 5px,#665555 5px)
+        }
+        .main .item:nth-child(30){
+        	background: #665555;
+        	background-size: 30px 30px;
+        	background-image: radial-gradient(#d2b48c 5px,transparent 0),
+        	radial-gradient(#d2b48c 5px,transparent 0);
+        	background-position: 0 0,15px 15px;
+        }
+	</style>
+</head>
+<body>
+	    <div class="wrapper">
+        <header>
+            <h3>CSS3 背景渐变</h3>
+        </header>
+        <div class="main">
+        <div class="item" data-brief="1"></div>
+        <div class="item" data-brief="2"></div>
+        <div class="item" data-brief="3"></div>
+        <div class="item" data-brief="4"></div>
+        <div class="item" data-brief="5"></div>
+        <div class="item" data-brief="6"></div>
+        <div class="item" data-brief="7"></div>
+        <div class="item" data-brief="8"></div>
+        <div class="item" data-brief="9"></div>
+        <div class="item" data-brief="10"></div>
+        <div class="item" data-brief="11"></div>
+        <div class="item" data-brief="12"></div>
+        <div class="item" data-brief="13"></div>
+        <div class="item" data-brief="14"></div>
+        <div class="item" data-brief="15"></div>
+        <div class="item" data-brief="16"></div>
+        <div class="item" data-brief="17"></div>
+        <div class="item" data-brief="18"></div>
+        <div class="item" data-brief="19"></div>
+        <div class="item" data-brief="20"></div>
+        <div class="item" data-brief="21"></div>
+        <div class="item" data-brief="22"></div>
+        <div class="item" data-brief="23"></div>
+        <div class="item" data-brief="24"></div>
+        <div class="item" data-brief="25"></div>
+        <div class="item" data-brief="26"></div>
+        <div class="item" data-brief="27"></div>
+        <div class="item" data-brief="28"></div>
+        <div class="item" data-brief="29"></div>
+        <div class="item" data-brief="30"></div>
+            </div>
+    </div>
+</body>
+</html>
