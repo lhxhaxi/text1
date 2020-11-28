@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>04 CSS3过渡（花样告白）</title> 
+    <style>
+      body{
+        padding:0;
+        margin:0;
+        background: #4993eb;
+      }
+      .top .heart::before{
+        width: 150px;
+        height: 250px;
+        color:#ffff24;
+        display: inline-block;
+        content:"\A\00A0\00A0\00A0\00A0\00A0某某某";
+        white-space: pre;
+        font-size: 25px;
+        background-color: #ff0582;
+        border-top-left-radius: 50% 75px;
+        border-top-right-radius: 50% 75px;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 211px;
+        top: 0px;
+        zoom:0.9;
+      }
+      .top .heart::after{
+        width: 150px;
+        height: 250px;
+        color:#ffff24;
+         font-size: 25px;
+        display: inline-block;
+        content:"\A\00A0\00A0\00A0\00A0\00A0喜欢你";
+        white-space: pre;
+        background-color: #ff0582;
+        border-top-left-radius: 50% 75px;
+        border-top-right-radius: 50% 75px;
+        transform: rotate(45deg);
+        position: absolute;
+        top:0px;
+        left: 282px;
+        zoom:0.9;
+      }
+    .flip-container {
+        position: absolute;
+        top:10px;
+        left: 800px;
+        zoom:0.85;
+}
+    .flip-container:hover .box{
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .box1, .box2{
+        width:300px;
+        height:300px;
+}
+
+.box {
+    transition: 0.8s;
+    transform-style: preserve-3d;
+}
+
+.box1, .box2 {
+    backface-visibility: hidden;
+    border-radius:60%;
+    background-image:url(images/bg.png);
+}
+
+.box1{
+    z-index: 2;
+    background-position: 300px 0px;
+}
+
+.box2{
+    transform: rotateY(180deg);
+    height:300px;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+       .items{
+            display: block;
+        }
+        .item{
+            width: 230px;
+            height: 300px;
+            text-align: center;
+            margin-right: 20px;
+            background-color: #fff;
+            float: left;
+            position: relative;
+            top:320px;
+            left:5%;
+            zoom:0.9;
+            overflow: hidden;
+            transform: all .5s;
+        }
+
+        .pic img{
+            margin-top: 30px;
+        }
+        .item .desc{
+            position: absolute;
+            left: 0;
+            bottom: -90px;
+            width: 100%;
+            height: 90px;
+             font-size: 20px;
+            background-color: #ff6700;
+            transform: all .5s;
+            line-height:90px;
+        }
+        .item .desc{
+            color:#fff;
+        }
+        .item:hover{
+            top: 310px;
+            box-shadow: 0px 0px 10px  #726c6c;
+        }
+        .item:hover .desc{
+            bottom:0;
+        }
+      
+    </style>  
+</head>
+
+<body>
+    <div class="top" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+         <div class="heart"></div>
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="box">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                </div>
+</div>
+    </div>
+   
+    <div class="items">
+        <div class="item">
+            <img src="./images/1.jpg" alt="">
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/2.png" alt="">
+            </div>
+            <div class="desc">有句话悄悄说</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/3.png" alt="">
+            </div>
+            <div class="desc">你的样子最可爱</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/4.png" alt="">
+            </div>
+            <div class="desc">喜欢的就是你</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/5.png" alt="">
+            </div>
+            <div class="desc">期限是一万年</div>
+        </div>
+    </div>
+</body>
+
+</html>
