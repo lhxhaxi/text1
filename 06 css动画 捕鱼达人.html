@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06 css动画 捕鱼达人</title>
+    <style>
+    body{
+        background: url(images/timg.jpg);
+        background-repeat: no-repeat;
+        background-size:cover; 
+    }
+        .shark,.shark2{
+            zoom:0.5;
+        }
+        .shark{
+            position: absolute;
+            top:0px;
+            left:-600px;
+            animation:transform 8s 7s infinite linear;
+        }
+        .shark2{
+            position: absolute;
+            right:0;
+            bottom:0;
+            animation:transform2 10s infinite linear;
+        }
+        .fish8{
+            position: absolute;
+            top:-100px;
+            left:0px;
+            animation:transform3 20s infinite linear;
+        }
+          @keyframes transform{
+            0%{
+                 
+            }
+            100%{
+                transform: translateX(2050px);
+            }
+         } 
+         @keyframes transform2{
+            0%{
+                 transform: translateY(0px) translateX(0px);
+            }
+            25%{
+                 transform: translateY(-150px) translateX(-600px);
+            }
+            50%{
+                 transform: translateY(0px) translateX(-1000px);
+            }
+            75%{
+                transform: translateY(-150px) translateX(-1550px);
+            }
+            100%{
+                transform: translateY(0px) translateX(-2050px);
+            }
+         }@keyframes transform3{
+            0%{
+                 transform: translateY(0px) translateX(0px);
+            }
+            25%{
+                 transform:translateX(400px) rotate(90deg);
+            }
+            40%{
+                 transform:translateY(200px) translateX(400px) rotate(90deg);
+            }50%{
+                 transform: translateY(300px) translateX(400px) rotate(90deg);
+            }
+            70%{
+                transform:translateY(300px) translateX(100px)  rotate(250deg);
+            }75%{
+                transform: translateY(300px) translateX(0px) rotate(270deg);
+            }96%{
+                transform:translateY(150px) translateX(0px) rotate(300deg);
+            }
+            100%{
+                transform: translateY(0px) translateX(0px) rotate(360deg);
+            }
+         }
+         .box,.box2,.box3{
+            margin: 100px auto; 
+         }
+         .box{
+            width: 509px;
+            height: 270px;
+            background: url(images/shark1.png) left top;
+            animation:  move 1s steps(8) infinite;
+         }
+         
+          .box2{
+            width: 515px;
+            height: 272.926666666666666px;
+            background: url(images/shark2.png) left top;
+            animation:  move2 1s steps(8) infinite;
+         }
+         .box3{
+            width: 174px;
+            height:126px;
+            background: url(images/fish8.png) left top;
+            animation:move3 1s steps(8) infinite;
+         }
+         @keyframes move{
+            0%{
+
+            }
+            100%{
+                background-position: left -2160px;
+            }
+         } 
+         @keyframes move3{
+            0%{
+
+            }
+            100%{
+                background-position: left -1008px;
+            }
+         }
+         @keyframes move2{
+            0%{
+
+            }
+            100%{
+                background-position: left -2160px;
+            }
+         }
+    </style>
+</head>
+<body>
+   <div class="shark">
+    <div class="box"></div>
+  </div>
+  <div class="shark2">
+    <div class="box2"></div>
+  </div>
+  <div class="fish8">
+    <div class="box3"></div>
+  </div>
+
+</body>
+</html>
