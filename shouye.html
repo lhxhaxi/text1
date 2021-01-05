@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欣欣然个人网站</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="images/logo.ico">
+    <meta http-equiv="refresh" content="10;url=file:///C:/Users/%E7%BD%97%E6%83%A0%E5%A8%9F/Desktop/%E6%9C%9F%E6%9C%AB%E8%80%83%E6%A0%B8%E5%A4%A7%E4%BD%9C%E4%B8%9A%E2%80%94%E2%80%94%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%BB%BC%E5%90%88%E6%93%8D%E4%BD%9C%E9%A2%98%20%208%E5%8F%B7/index.html">
+    <style type="text/css">
+    *{
+        padding:0;
+        margin:0;
+    }
+    body{
+background-image: url(media/2.gif);
+    background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+    }
+ 
+    @font-face{
+        font-family:'fonts/xingkaiti';
+        src:url(fonts/xingkaiti.TTF);
+    }
+    span{
+        position:absolute;
+        bottom:5%;
+        right:5%;
+    }
+    a{
+        position:absolute;
+        bottom:5%;
+        right:5%;
+    }
+    #id1{
+        position:absolute;
+        bottom:5%;
+        right:13%;
+        background:transparent;
+        height:100%;
+        width:100%;    
+    }
+    #id2{
+        position:absolute;
+        bottom:5%;
+        right:13%;
+          color:white;
+    }
+    #id3{
+        color: white;
+    }
+    .box .biaoti{
+        position:absolute;
+        top:10%;
+        left:25%;
+        color:#ff0000;
+        font-size:100px;
+        margin-left:100px; 
+        font-weight:700px;
+        font-family:'5FAE\8F6F\96C5\9ED';
+        text-shadow: 4px 4px 4px #e7d779;
+    }
+
+     .box div{
+         position:absolute;
+        top:40%;
+        left:20%;
+        color:red;
+        font-size:20px;
+        text-shadow: 1px 0px 1px yellow;
+     }
+     .box div .wenzi1{
+       margin:auto 360px;
+     }
+     .box div .wenzi2{
+       font-size:30px;
+       margin:auto 275px;
+     }
+    </style>
+    <script>
+    function play_v1(v){
+        v.play()
+    }
+       
+    function daojishi()
+    {
+        var starttime=document.getElementById("id2").innerText;
+        if(starttime==0)
+        {
+            return ;
+        }
+        setTimeout("daojishi()",1000);
+        starttime--;
+        document.getElementById("id2").innerText=starttime;
+    }
+    </script>
+</head>
+<body>
+<div class="box">
+    <p class="biaoti">建党99周年</p>
+    <div>
+    <p class="wenzi1">1921-2020</p><br>
+    <p class="wenzi2">不忘初心&nbsp;&nbsp;&nbsp;牢记使命</p><br>
+    <p class="wenzi3">Celebrating the 99th anniversary of the the founding of the Communist Party of China</p>
+    </div>
+</div>
+       
+       <span id="id2">10</span>
+       <a  id="id1" onmouseover="daojishi()"  href="index.html" ></a>
+       <span id="id3">秒后转到主页</span>
+</body>
+</html>
+
